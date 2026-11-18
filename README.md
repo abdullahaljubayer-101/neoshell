@@ -2,208 +2,146 @@
 
 # 💻 NeoShell
 
-### A safe, simulated terminal emulator built with Java Swing
+### Practice terminal commands without the fear of breaking your computer
 
-[![Java](https://img.shields.io/badge/Java-17%2B-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.oracle.com/java/)
-[![Maven](https://img.shields.io/badge/Maven-3.8%2B-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)](https://maven.apache.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-blue?style=for-the-badge)]()
+![Java](https://img.shields.io/badge/Java-25-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Swing](https://img.shields.io/badge/GUI-Java%20Swing-5382A1?style=for-the-badge)
+![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-blue?style=for-the-badge)
 
-**NeoShell** is a desktop terminal simulator that lets you practice real shell commands — safely, without touching your actual file system. Choose between Windows CMD, macOS Zsh, or Linux Bash environments, each with its own prompt style, command set, and authentic behavior.
-
-> ⚡ *All commands are simulated. Your PC is completely safe.*
+![NeoShell OS selector](screenshots/screenshots1.png)
 
 </div>
 
----
-
-## 🤔 Why NeoShell?
-
-Many students and beginners avoid learning the terminal because of one very real fear: **accidentally breaking their system.**
-
-Deleting the wrong files. Modifying permissions. Crashing the OS. These aren't hypotheticals — a single wrong command in a real terminal can cause serious, irreversible damage.
-
-The only "safe" alternative until now was setting up a full Virtual Machine — which is heavy, complex, and overkill just for learning `cd` and `mkdir`.
-
-**NeoShell changes that.** It gives you a terminal that *looks*, *feels*, and *behaves* exactly like the real thing — but executes nothing on your actual machine. Everything happens inside a sandboxed, in-memory virtual file system. You can type `rm -rf /` and nothing will happen. You can experiment, make mistakes, and learn — completely risk-free.
-
-### ✅ Why you should use NeoShell
-
-- **Zero risk** — no real commands ever touch your file system or OS
-- **No setup needed** — just run the JAR file and start practicing immediately
-- **Three OS environments in one** — practice Windows CMD, macOS Zsh, and Linux Bash without switching machines
-- **Realistic experience** — authentic prompts, command behavior, error messages, and a nano-style text editor
-- **Perfect for students, bootcamps, and self-learners** — build real terminal confidence before going live
-- **Completely offline** — no internet required, no accounts, no tracking
+**NeoShell** is a desktop terminal simulator built with **Java Swing**. Pick **Windows CMD**, **macOS Zsh** or **Linux Bash**, and you get a terminal that looks and behaves like the real one. The difference is that every command runs inside an **in-memory virtual file system**, so nothing ever touches your actual disk. ⚡
 
 ---
 
-## 📸 Screenshots
+## 🤔 Why I built it
 
-### 🖥️ OS Selection Screen
-Choose your terminal environment on launch — Windows CMD, macOS Zsh, or Linux Bash.
+A lot of beginners avoid the terminal because they're scared of typing the wrong thing: deleting files, messing up permissions or breaking the system. Setting up a virtual machine just to learn `cd` and `mkdir` feels like overkill.
 
-![NeoShell OS Selector](screenshots/selector.png)
-
----
-
-### 🍎 macOS Zsh Mode — Terminal + Help
-Authentic `student@mac ~ %` prompt with full command support and color-coded output.
-
-![NeoShell macOS Terminal](screenshots/macos.png)
-
----
-
-### 📝 Built-in nano Editor
-Type `nano filename.txt` to open a fully functional in-app text editor. Save with `Ctrl+S`, exit with `Ctrl+X`.
-
-![NeoShell Nano Editor](screenshots/nano.png)
-
----
+NeoShell is my answer to that. You can type `rm -r` on anything you want and the worst that happens is a fake folder disappears. Make mistakes, experiment, learn. 🧪
 
 ## ✨ Features
 
-- **3 OS Modes** — Switch between Windows CMD, macOS Zsh, and Linux Bash, each with authentic prompts and commands
-- **Virtual File System** — A fully in-memory file system with directories, files, read/write — nothing touches your real disk
-- **Redirection Operators** — Use `>` to write and `>>` to append output to files, just like a real shell
-- **nano-style Editor** — Type `nano filename.txt` to open an in-app text editor with `Ctrl+S` to save and `Ctrl+X` to exit
-- **Command History** — Navigate previous commands with the ↑ and ↓ arrow keys
-- **Syntax-colored Output** — Green for prompts, white for output, red for errors
-- **Clean Dark UI** — A polished dark terminal aesthetic built entirely with Java Swing
+- 🖥️ **3 OS modes**: Windows CMD, macOS Zsh and Linux Bash, each with its own prompt and command set
+- 🗂️ **Virtual file system**: real folders and files, all kept in memory
+- ↪️ **Redirection**: `>` to write and `>>` to append output to a file
+- 📝 **nano-style editor**: `nano notes.txt` opens a built-in editor (`Ctrl+S` to save, `Ctrl+X` to exit)
+- ⏪ **Command history** with the ↑ and ↓ keys
+- 🎨 **Colored output**: green prompts, white output, red errors
+- 🌙 Clean dark terminal UI
+- 🔌 Works completely **offline**: no accounts, no tracking
 
----
+## 📸 Screenshots
 
-## 🖥️ Supported Commands
+| macOS mode + `help` | Built-in nano editor |
+| :---: | :---: |
+| ![macOS terminal](screenshots/screenshots2.png) | ![nano editor](screenshots/screenshots3.png) |
 
-### Linux / macOS
-| Command | Description |
-|---|---|
+## ⌨️ Supported commands
+
+<table>
+<tr><th>🐧 Linux / 🍎 macOS</th><th>🪟 Windows CMD</th></tr>
+<tr valign="top"><td>
+
+| Command | What it does |
+| --- | --- |
 | `ls [-l]` | List directory contents |
 | `cd <path>` | Change directory |
-| `mkdir <dir>` | Create a directory |
-| `rm [-r] <file>` | Remove a file or directory |
-| `cp <src> <dest>` | Copy a file |
-| `mv <src> <dest>` | Move or rename a file |
-| `cat <file>` | Display file contents |
-| `touch <file>` | Create an empty file |
 | `pwd` | Print working directory |
-| `echo <msg> [> file]` | Print message or redirect to file |
-| `nano <file>` | Open the built-in text editor |
-| `whoami` | Print current user |
-| `uname` | Print OS name |
-| `clear` | Clear the screen |
-| `help` | Show all commands |
-| `exit` | Exit NeoShell |
+| `mkdir <dir>` | Create a directory |
+| `touch <file>` | Create an empty file |
+| `cat <file>` | Show file contents |
+| `cp <src> <dest>` | Copy a file |
+| `mv <src> <dest>` | Move or rename |
+| `rm [-r] <path>` | Remove a file or folder |
+| `echo <msg> [> file]` | Print or write to a file |
+| `nano <file>` | Open the editor |
+| `whoami` · `uname` | User and OS name |
+| `clear` · `help` · `exit` | The usual |
 
-### Windows CMD
-| Command | Description |
-|---|---|
+</td><td>
+
+| Command | What it does |
+| --- | --- |
 | `dir` | List directory contents |
 | `cd <path>` | Change directory |
 | `mkdir <dir>` | Create a directory |
+| `type <file>` | Show file contents |
+| `copy <src> <dest>` | Copy a file |
+| `move <src> <dest>` | Move or rename |
 | `del <file>` | Delete a file |
 | `rmdir <dir>` | Remove a directory |
-| `copy <src> <dest>` | Copy a file |
-| `move <src> <dest>` | Move or rename a file |
-| `type <file>` | Display file contents |
-| `echo <msg> [> file]` | Print message or redirect to file |
-| `nano <file>` | Open the built-in text editor |
-| `cls` | Clear the screen |
-| `ver` | Show version |
-| `whoami` | Show current user |
-| `help` | Show all commands |
-| `exit` | Exit NeoShell |
+| `echo <msg> [> file]` | Print or write to a file |
+| `nano <file>` | Open the editor |
+| `whoami` · `ver` | User and version |
+| `cls` · `help` · `exit` | The usual |
 
----
+</td></tr>
+</table>
 
-## 🚀 Getting Started
+## 🚀 Getting started
 
-### Prerequisites
-- Java 17 or higher
-- Maven 3.8 or higher
-
-### Clone & Run
+**Requirements:** JDK 25 and Maven.
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/NeoShell.git
-cd NeoShell
-mvn clean package
-java -jar target/NeoShell-1.0-SNAPSHOT.jar
+git clone https://github.com/abdullahaljubayer-101/neoshell.git
+cd neoshell
+mvn clean compile
+java -cp target/classes com.neoshell.Main
 ```
 
-Or simply open the project in **IntelliJ IDEA** and run `Main.java`.
+Or open the project in **IntelliJ IDEA** and run `Main.java`.
 
-### First Launch
+### First steps
 
-1. When NeoShell opens, you'll see the **OS Selector** — pick Windows, macOS, or Linux
-2. You're dropped into a fully simulated terminal with a pre-populated virtual file system
-3. Type `help` to see all available commands
-4. Start exploring! Try `ls`, `mkdir myfolder`, `cd myfolder`, `touch hello.txt`, `nano hello.txt`
+1. Choose **Windows**, **macOS** or **Linux** on the start screen.
+2. Type `help` to see what you can do.
+3. Try something like this:
 
-> 💡 **Tip:** Use the ↑ and ↓ arrow keys to navigate your command history, just like a real terminal.
-
----
-
-## 📁 Project Structure
-
-```
-NeoShell/
-├── src/
-│   └── main/
-│       └── java/
-│           └── com/termij/
-│               ├── Main.java                  # Entry point
-│               ├── model/
-│               │   └── OSType.java            # Enum: WINDOWS, MAC, LINUX
-│               ├── backend/
-│               │   ├── CommandEngine.java      # Routes & executes commands
-│               │   ├── CommandResult.java      # Result type returned to UI
-│               │   └── VirtualFileSystem.java  # In-memory file system
-│               └── ui/
-│                   ├── MainWindow.java         # Main terminal UI (JFrame)
-│                   ├── OSSelectorDialog.java   # OS picker on startup
-│                   └── NanoEditorPanel.java    # Built-in nano-style editor
-├── screenshots/
-│   ├── selector.png
-│   ├── macos.png
-│   └── nano.png
-├── pom.xml
-└── README.md
+```bash
+mkdir playground
+cd playground
+echo "Hello World!" > hello.txt
+cat hello.txt
+nano hello.txt
 ```
 
----
+## 🏗️ How it's built
 
-## 🛠️ Tech Stack
+```text
+src/main/java/com/neoshell/
+├── Main.java                   # Entry point
+├── model/
+│   └── OSType.java             # WINDOWS, MAC, LINUX
+├── backend/
+│   ├── CommandEngine.java      # Parses and runs every command
+│   ├── CommandResult.java      # What a command returns to the UI
+│   └── VirtualFileSystem.java  # The in-memory file system
+└── ui/
+    ├── OSSelectorDialog.java   # OS picker on launch
+    ├── MainWindow.java         # The terminal window
+    └── NanoEditorPanel.java    # The nano-style editor
+```
 
-- **Language:** Java 17
-- **UI Framework:** Java Swing
-- **Build Tool:** Maven
-- **IDE:** IntelliJ IDEA
+The UI never touches real files. It sends the typed line to `CommandEngine`, which works only on `VirtualFileSystem` and returns a `CommandResult` for the window to print. Keeping those layers separate made it easy to support three different "operating systems" with one engine.
 
----
+## 🛠️ Tech stack
+
+`Java 25` · `Java Swing` · `Maven` · `IntelliJ IDEA`
 
 ## 🤝 Contributing
 
-Pull requests are welcome! If you'd like to add new commands, fix a bug, or improve the UI, feel free to fork the repo and open a PR.
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/new-command`)
-3. Commit your changes (`git commit -m 'Add some command'`)
-4. Push to the branch (`git push origin feature/new-command`)
-5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+Ideas for new commands or UI improvements are welcome. Fork the repo, create a branch, and open a pull request. 🙌
 
 ---
 
 <div align="center">
 
-**Stop being afraid of the terminal. Start practicing with NeoShell.**
+**Stop being afraid of the terminal. Start practicing with NeoShell.** 💚
 
-Made with ☕ and Java &nbsp;|&nbsp; <strong>NeoShell — Safe Terminal Simulator</strong>
+Made by **Abdullah Al Jubayer** · [GitHub](https://github.com/abdullahaljubayer-101) · [Portfolio](https://abdullahaljubayer.com)
 
 </div>
